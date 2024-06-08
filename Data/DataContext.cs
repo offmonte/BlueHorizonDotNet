@@ -1,16 +1,15 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using BlueHorizon.Models;
+using Microsoft.EntityFrameworkCore;
 
-namespace GameForum.Data
+namespace BlueHorizon.Data
 {
     public class DataContext : DbContext
     {
-        public DataContext(DbContextOptions<DataContext> option) : base(option) 
+        public DataContext(DbContextOptions<DataContext> option) : base(option)
         {
         }
 
         public DbSet<Usuario> Usuarios { get; set; }
-        public DbSet<Jogo> Jogos { get; set; }
-        public DbSet<Avaliacao> Avaliacoes { get; set; }
-        public DbSet<Comentario> Comentarios { get; set; }
+        public DbSet<Atualizacao> Atualizacoes { get; set; } 
     }
 }

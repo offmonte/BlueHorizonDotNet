@@ -1,5 +1,5 @@
-global using GameForum.Models;
-using GameForum.Data;
+global using BlueHorizon.Models;
+using BlueHorizon.Data;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);

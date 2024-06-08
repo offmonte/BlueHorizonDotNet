@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace GameForum.DTOs
+namespace BlueHorizon.DTOs
 {
     public class LoginDTO
     {

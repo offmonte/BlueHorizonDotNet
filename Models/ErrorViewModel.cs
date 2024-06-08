@@ -1,4 +1,4 @@
-namespace GameForum.Models
+namespace BlueHorizon.Models
 {
     public class ErrorViewModel
     {

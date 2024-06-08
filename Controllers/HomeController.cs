@@ -1,9 +1,9 @@
-using GameForum.Data;
-using GameForum.Models;
+using BlueHorizon.Data;
+using BlueHorizon.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
-namespace GameForum.Controllers
+namespace BlueHorizon.Controllers
 {
     
     public class HomeController : Controller

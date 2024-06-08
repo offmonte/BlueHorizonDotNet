@@ -1,8 +1,9 @@
-﻿using GameForum.Data;
-using GameForum.DTOs;
+﻿using BlueHorizon.Data;
+using BlueHorizon.DTOs;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
-namespace GameForum.Controllers
+namespace BlueHorizon.Controllers
 {
     public class UserController : Controller
     {
@@ -27,8 +28,6 @@ namespace GameForum.Controllers
                 return RedirectToAction("PerfilPage", "User");
             }
             
-
-
             var getUser = _dataContext.Usuarios.FirstOrDefault(x => x.UserEmail == request.Email);
             if (getUser == null) 
             {
@@ -98,7 +97,11 @@ namespace GameForum.Controllers
             }
             var getUser = _dataContext.Usuarios.Find(id);
 
+            var getAtualizacao = _dataContext.Atualizacoes.ToList();
+
+            ViewBag.getAtualizacao = getAtualizacao;
             ViewBag.User = getUser;
+            ViewBag.isLogged = true;
 
             return View();
         }

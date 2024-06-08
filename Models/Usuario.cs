@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace GameForum.Models
+namespace BlueHorizon.Models
 {
     [Table("Tabela_Usuarios")]
     public class Usuario
@@ -28,9 +28,6 @@ namespace GameForum.Models
         [Column("Data_do_registro")]
         public DateTime DateRegister { get; set; }
 
-        public ICollection<Avaliacao>? Avaliations { get; set; }
-        public ICollection<Comentario>? comentarios { get; set; }
-        public ICollection<Jogo>? jogos { get; set; }
         [Required]
         [Column("Usuario_Ativo")]
         public bool IsActive { get; set; } = true;

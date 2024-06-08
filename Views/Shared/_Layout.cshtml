@@ -43,15 +43,23 @@
             <img src="../image/BlueHorizonLogo.png" width="150" height="150" alt="Logo" />
         </a>
         <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-                <a class="nav-link" asp-controller="User" asp-action="LoginPage">Login</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" asp-controller="User" asp-action="CadastroPage">Cadastro</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" asp-controller="User" asp-action="PerfilPage">Perfil</a>
-            </li>
+            @if (ViewBag.IsLogged != null && ViewBag.IsLogged == true)
+            {
+                <!-- Se o usuário estiver logado -->
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Seu perfil: @ViewBag.User.UserName</a>
+                </li>
+            }
+            else
+            {
+                <!-- Se o usuário não estiver logado -->
+                <li class="nav-item">
+                    <a class="nav-link" asp-controller="User" asp-action="LoginPage">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-controller="User" asp-action="CadastroPage">Cadastro</a>
+                </li>
+            }
         </ul>
     </nav>
     <!-- /.navbar -->
